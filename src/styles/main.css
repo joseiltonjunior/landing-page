@@ -1,0 +1,38 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@layer base {
+
+    *,
+    ::before,
+    ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #202022;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body::-webkit-scrollbar {
+        width: 0.4rem;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: #2E2E35;
+    }
+
+    body,
+    input,
+    textarea,
+    button {
+        font-family: 'Baloo 2', sans-serif;
+        color: #eee;
+        font-weight: 400;
+    }
+
+}
