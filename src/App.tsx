@@ -14,13 +14,14 @@ function App() {
       <Analytics />
       <ToastContainer />
       <Header step={step} setStep={setStep} />
-      {step === 0 && (
+
+      <>
         <div className="grid grid-cols-2 mt-8 md:grid-cols-1 gap-16">
           <Aside />
           <Main />
         </div>
-      )}
-      {step === 1 && <Services />}
+        <Services />
+      </>
     </div>
   )
 }
