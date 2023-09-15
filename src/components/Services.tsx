@@ -8,7 +8,12 @@ import { Card } from './Card'
 export function Services() {
   return (
     <div className="mb-4">
-      <p className="font-bold text-2xl">Serviços</p>
+      <p className="font-bold text-2xl text-purple-600" id="services">
+        Serviços
+      </p>
+      <p className="ms-4 font-semibold text-lg  text-slate-300" id="services">
+        Projeção, Desenvolvimento e manutenção de:
+      </p>
       <div className="grid grid-cols-5 gap-4 mt-4 md:grid-cols-1">
         <Card
           icon={landingpageIcon}
@@ -26,6 +31,7 @@ export function Services() {
         <Card
           icon={sitesIcon}
           title="Sites"
+          urlExample="https://ferreirajr.tech/"
           description="Um site é uma coleção de páginas da web hospedadas na internet,
             oferecendo uma presença online."
           moreDescription="Os benefícios incluem interação com o público, vendas online,
@@ -38,6 +44,7 @@ export function Services() {
         <Card
           icon={ecommerceIcon}
           title="E-commerce"
+          urlExample="https://dcoffee-shop.netlify.app/"
           description="Um e-commerce é uma plataforma online que permite a compra e venda
           de produtos ou serviços pela internet."
           moreDescription="Seus benefícios incluem alcance global, disponibilidade 24/7,
@@ -50,6 +57,7 @@ export function Services() {
         <Card
           icon={dashboardIcon}
           title="Dashboard"
+          urlExample="https://nacao-fut.netlify.app/"
           description="Um dashboard é uma interface visual que apresenta informações de
           forma clara e concisa, geralmente usando gráficos e tabelas."
           moreDescription="Seus benefícios incluem a visualização de dados, tomada de decisões

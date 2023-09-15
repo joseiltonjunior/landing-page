@@ -7,27 +7,28 @@ export function Header({ step }: HeaderProps) {
   return (
     <header className="flex justify-between py-8 md:flex-col ">
       <div className="md:mx-auto">
-        <p className="font-bold text-2xl">Junior Ferreira</p>
-        <p className="ms-4 font-bold text-2xl text-purple-600">
+        <p className="font-bold text-2xl transform hover:scale-110 transition duration-300">
+          Junior Ferreira
+        </p>
+        <p className="ms-4 font-bold text-2xl text-purple-600 transform hover:scale-110 transition duration-300">
           Desenvolvedor de Software
         </p>
       </div>
       <div className="flex gap-8 md:mt-4 md:mx-auto items-start">
-        <p
+        <a
           className={`h-fit font-bold ${
             step === 0 && 'border-b-2 border-purple-600'
           }`}
         >
           Home
-        </p>
+        </a>
 
         <a
           className="font-bold text-purple-600 hover:border-b-2"
-          href="https://ferreirajr.tech/"
-          target="_blank"
+          href="#services"
           rel="noreferrer"
         >
-          Portfólio
+          Serviços
         </a>
       </div>
     </header>
