@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { ComponentProps, useState } from 'react'
 
-interface CardProps {
+interface CardProps extends ComponentProps<'div'> {
   icon: string
   title: string
   description: string
-  moreDescription: string
+
   urlExample?: string
 }
 
@@ -12,13 +12,13 @@ export function Card({
   description,
   icon,
   urlExample,
-  moreDescription,
+
   title,
 }: CardProps) {
   const [isVisible, setIsVisible] = useState(false)
 
   return (
-    <div className="bg-gray-500 rounded-lg p-4 flex flex-col">
+    <div className="bg-gray-500 rounded-lg p-4 flex flex-col h-96">
       {!isVisible && (
         <>
           <img
@@ -30,13 +30,13 @@ export function Card({
           <p className="mt-2">{description}</p>
         </>
       )}
-      <p className={`${isVisible ? 'visible' : 'hidden'}`}>{moreDescription}</p>
-      <button
+
+      {/* <button
         className="bg-purple-600 rounded-md p-2 w-full mt-auto hover:bg-purple-600/80 font-bold"
         onClick={() => setIsVisible(!isVisible)}
       >
         {isVisible ? 'Ver menos' : 'Ver mais'}
-      </button>
+      </button> */}
 
       {urlExample && (
         <a

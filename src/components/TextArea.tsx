@@ -12,7 +12,7 @@ export function TextArea({ register, name, ...rest }: TextAreaProps) {
   return (
     <textarea
       {...register(name)}
-      className="p-3 rounded-2xl outline-none text-gray-500 w-full border-2 focus:border-purple-600"
+      className="py-2 outline-none text-white w-full font-semibold bg-transparent border-b-2 border-gray-400 focus:border-purple-600"
       {...rest}
     />
   )

@@ -4,7 +4,8 @@ export default {
   theme: {
     screens: {
       md: { max: '899px' },
-      base: { min: '899px' },
+      base: { min: '900px' },
+      large: { min: '1400px' },
     },
     extend: {
       colors: {
@@ -30,5 +31,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss'), require('autoprefixer')],
 }
