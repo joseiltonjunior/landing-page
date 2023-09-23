@@ -44,7 +44,7 @@ export function Header({ scroll }: HeaderProps) {
         scroll > 80 ? 'bg-gray-950' : 'bg-gray-950/70'
       } transition duration-300`}
     >
-      <div className="max-w-6xl ms-auto me-auto w-full flex justify-between items-center">
+      <div className="max-w-7xl ms-auto me-auto w-full flex justify-between items-center">
         <div className="md:mx-auto flex items-center">
           <img src={logo} alt="logo" className="rounded-xl w-12 h-12" />
         </div>
