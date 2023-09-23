@@ -5,13 +5,28 @@ import { ToastContainer } from 'react-toastify'
 import { Analytics } from '@vercel/analytics/react'
 import bg from '@/assets/bg.jpg'
 import { Aside } from './components/Aside'
+import { useEffect, useState } from 'react'
 
 function App() {
+  const [scrollY, setScrollY] = useState(0)
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
       <Analytics />
       <ToastContainer />
-      <Header />
+      <Header scroll={scrollY} />
 
       <div
         id="home"

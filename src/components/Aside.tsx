@@ -1,6 +1,13 @@
+import { motion } from 'framer-motion'
+
 export function Aside() {
   return (
-    <aside className="flex flex-col justify-between p-8 md:p-0 md:pt-4">
+    <motion.div
+      initial={{ x: -300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="flex flex-col justify-between p-8 md:p-0 md:pt-4"
+    >
       <div>
         <p className="font-bold text-4xl">Desenvolvedor de Software</p>
         <p className="font-bold text-2xl ms-8 text-purple-600">
@@ -20,6 +27,6 @@ export function Aside() {
         para colaborar com você para alcançar seus objetivos digitais. Vamos
         juntos transformar suas ideias em realidade!
       </p>
-    </aside>
+    </motion.div>
   )
 }

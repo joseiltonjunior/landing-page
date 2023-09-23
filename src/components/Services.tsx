@@ -18,6 +18,16 @@ export function Services() {
   })
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      instanceRef.current?.next()
+    }, 5000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [instanceRef])
+
+  useEffect(() => {
     function getScreenWidth() {
       return (
         window.innerWidth ||

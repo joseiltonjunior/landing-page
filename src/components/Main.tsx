@@ -1,5 +1,6 @@
 import { collection, addDoc } from 'firebase/firestore'
 import { firestore } from '@/services/firebase'
+import { motion } from 'framer-motion'
 
 import { Button } from './Button'
 import { Input } from './Input'
@@ -49,7 +50,12 @@ export function Main() {
   )
 
   return (
-    <main className="h-auto bg-gray-950/90 p-8 md:p-4 rounded-xl">
+    <motion.div
+      initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="h-auto bg-gray-950/90 p-8 md:p-4 rounded-xl"
+    >
       <div>
         <h1 className="font-bold text-2xl text-purple-600 md:text-2xl">
           Juntos, Podemos Criar o Futuro Digital
@@ -93,6 +99,6 @@ export function Main() {
           Enviar
         </Button>
       </form>
-    </main>
+    </motion.div>
   )
 }

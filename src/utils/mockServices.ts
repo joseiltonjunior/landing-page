@@ -26,6 +26,6 @@ export const mockServices = [
     icon: dashboardIcon,
     title: 'Manutenção e Suporte',
     description:
-      'stou comprometido em garantir que seu software esteja sempre atualizado, seguro e funcionando perfeitamente, oferecendo suporte contínuo para sua tranquilidade.',
+      'Estou comprometido em garantir que seu software esteja sempre atualizado, seguro e funcionando perfeitamente, oferecendo suporte contínuo para sua tranquilidade.',
   },
 ]
