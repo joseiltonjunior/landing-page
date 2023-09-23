@@ -12,7 +12,7 @@ export function Input({ register, name, ...rest }: InputProps) {
   return (
     <input
       {...register(name)}
-      className="p-3 rounded-2xl outline-none text-gray-500 w-full border-2 border-gray-950 focus:border-purple-600"
+      className="py-2 outline-none bg-transparent  text-white font-semibold w-full border-b-2 border-gray-400 focus:border-purple-600"
       {...rest}
     />
   )

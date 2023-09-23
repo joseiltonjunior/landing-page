@@ -8,7 +8,7 @@ interface ButtonProps extends ComponentProps<'button'> {
 export function Button({ children, isLoading, ...rest }: ButtonProps) {
   return (
     <button
-      className="bg-purple-600 p-3 rounded-2xl hover:bg-transparent border-2 border-gray-950 hover:border-purple-600 outline-none font-bold text-lg"
+      className="bg-purple-600 p-3 rounded-2xl hover:bg-white hover:text-gray-500 transition duration-300 outline-none font-bold text-lg"
       {...rest}
     >
       {isLoading ? (
