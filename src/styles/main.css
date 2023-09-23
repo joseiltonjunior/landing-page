@@ -31,7 +31,7 @@ input:-webkit-autofill:active {
     }
 
     body::-webkit-scrollbar-thumb {
-        background: #2E2E35;
+        background: #9333ea;
     }
 
     body,

@@ -1,9 +1,10 @@
 <h1 align="center">My Landing Page</h1>
 
 
-<p align="center">
-  <img src="https://i.ibb.co/55w81Qg/landing-page.png" alt="landing-page" border="0">
-</p>
+<img src="https://i.ibb.co/0fNM7K8/landing-page-01.png" alt="landing-page-01" border="0">
+
+<img src="https://i.ibb.co/MngY36S/landing-page-02.png" alt="landing-page-02" border="0">
+
 
 <h3><strong>In your terminal</strong></h3>
 

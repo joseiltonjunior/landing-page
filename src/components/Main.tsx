@@ -1,5 +1,6 @@
 import { collection, addDoc } from 'firebase/firestore'
 import { firestore } from '@/services/firebase'
+import { motion } from 'framer-motion'
 
 import { Button } from './Button'
 import { Input } from './Input'
@@ -8,10 +9,11 @@ import { useForm } from 'react-hook-form'
 import { useCallback, useState } from 'react'
 import { useToast } from '@/hooks/useToast'
 import { SendEmailProps } from '@/utils/sendEmailProps'
+import { useTranslation } from 'react-i18next'
 
 export function Main() {
   const [isLoading, setIsLoading] = useState(false)
-
+  const { t } = useTranslation()
   const { showToast } = useToast()
 
   const {
@@ -29,7 +31,7 @@ export function Main() {
         form,
       })
         .then(() => {
-          showToast('E-mail enviado com sucesso', {
+          showToast(t('success'), {
             type: 'success',
             theme: 'light',
           })
@@ -38,26 +40,28 @@ export function Main() {
           setValue('message', '')
         })
         .catch(() => {
-          showToast('Falha ao enviar e-mail, entre novamente mais tarde.', {
+          showToast(t('error'), {
             type: 'error',
             theme: 'light',
           })
         })
         .finally(() => setIsLoading(false))
     },
-    [setValue, showToast],
+    [setValue, showToast, t],
   )
 
   return (
-    <main className="h-auto bg-gray-950/90 p-8 md:p-4 rounded-xl">
+    <motion.div
+      initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="h-auto bg-gray-950/90 p-8 md:p-4 rounded-xl"
+    >
       <div>
         <h1 className="font-bold text-2xl text-purple-600 md:text-2xl">
-          Juntos, Podemos Criar o Futuro Digital
+          {t('formTitle')}
         </h1>
-        <p className="mt-8 font-medium text-lg">
-          Vamos iniciar essa jornada juntos. Entre em contato para uma
-          consultoria gratuita e sem compromisso.
-        </p>
+        <p className="mt-8 font-medium text-lg">{t('formInfo')}</p>
       </div>
 
       <form
@@ -66,7 +70,7 @@ export function Main() {
       >
         <Input
           name="name"
-          placeholder="Nome"
+          placeholder={t('inputName')}
           type="text"
           required
           register={register}
@@ -74,7 +78,7 @@ export function Main() {
         />
         <Input
           name="email"
-          placeholder="Email"
+          placeholder={t('inputEmail')}
           type="email"
           required
           register={register}
@@ -83,16 +87,16 @@ export function Main() {
 
         <TextArea
           name="message"
-          placeholder="Em que posso te ajudar?"
+          placeholder={t('inputArea')}
           required
           register={register}
           error={errors.message}
         />
 
         <Button isLoading={isLoading} type="submit">
-          Enviar
+          {t('sendButton')}
         </Button>
       </form>
-    </main>
+    </motion.div>
   )
 }

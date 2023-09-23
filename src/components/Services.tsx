@@ -5,10 +5,11 @@ import 'keen-slider/keen-slider.min.css'
 import { mockServices } from '@/utils/mockServices'
 import { AiFillCaretRight, AiFillCaretLeft } from 'react-icons/ai'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function Services() {
   const [screenWidth, setScreenWidth] = useState(0)
-
+  const { t } = useTranslation()
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: {
       perView: screenWidth < 900 ? 1 : 3,
@@ -16,6 +17,16 @@ export function Services() {
     },
     loop: true,
   })
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      instanceRef.current?.next()
+    }, 5000)
+
+    return () => {
+      clearInterval(interval)
+    }
+  }, [instanceRef])
 
   useEffect(() => {
     function getScreenWidth() {
@@ -51,7 +62,7 @@ export function Services() {
 
       <div className="mb-4 mt-12 md:mt-4 relative ms-auto me-auto max-w-6xl">
         <p className="font-bold text-2xl" id="services">
-          O Que Faço:
+          {t('myWork')}
         </p>
 
         <div className="flex overflow-hidden mt-6" ref={sliderRef}>
@@ -59,8 +70,8 @@ export function Services() {
             <div key={index} className="keen-slider__slide">
               <Card
                 icon={service.icon}
-                title={service.title}
-                description={service.description}
+                title={t(`titleWork0${index + 1}`)}
+                description={t(`descriptionWork0${index + 1}`)}
               />
             </div>
           ))}
