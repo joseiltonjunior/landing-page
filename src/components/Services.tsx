@@ -12,21 +12,11 @@ export function Services() {
   const { t } = useTranslation()
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: {
-      perView: screenWidth < 900 ? 1 : 3,
+      perView: screenWidth < 900 ? 1 : 4,
       spacing: 16,
     },
     loop: true,
   })
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      instanceRef.current?.next()
-    }, 5000)
-
-    return () => {
-      clearInterval(interval)
-    }
-  }, [instanceRef])
 
   useEffect(() => {
     function getScreenWidth() {

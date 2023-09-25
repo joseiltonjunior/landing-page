@@ -6,6 +6,8 @@ import { Analytics } from '@vercel/analytics/react'
 import bg from '@/assets/bg.jpg'
 import { Aside } from './components/Aside'
 import { useEffect, useState } from 'react'
+import { Projects } from './components/Projects'
+import { SideMenu } from './components/SideMenu'
 
 function App() {
   const [scrollY, setScrollY] = useState(0)
@@ -43,9 +45,12 @@ function App() {
             <Main />
           </div>
         </div>
+
+        <SideMenu />
       </div>
 
       <Services />
+      <Projects />
     </>
   )
 }

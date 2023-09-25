@@ -34,4 +34,6 @@ export const TRANSLATIONS_PT_BR = {
     'Estou comprometido em garantir que seu software esteja sempre atualizado, seguro e funcionando perfeitamente, oferecendo suporte contínuo para sua tranquilidade.',
 
   services: 'Serviços',
+
+  projects: 'Projetos',
 }
